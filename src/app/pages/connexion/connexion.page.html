@@ -1,0 +1,29 @@
+<ion-content class="">
+  <div class="relative h-screen">
+    <div class="bg-green-600 text-3xl uppercase text-center h-80 text-white pt-24">créer votre compte</div>
+    <div class="absolute bg-white w-full h-64 rounded top-56 left-2 z-auto" style="transform: rotate(30deg); border-radius: 60px; font-family: Verdana, Geneva, Tahoma, sans-serif;"></div>
+    <div class="">
+      <form action="" class="" [formGroup]="loginForm" (ngSubmit)="signIn()">
+        <div class="">
+          <div class="flex flex-col justify-start px-5 relative mt-5">
+            <label for="" class="absolute top-2 left-7" [ngClass]="focused ? '-top-2.5 left-10 z-10 bg-white px-2 text-sm':''">Email</label>
+            <input type="email" name="" id="" (focus)="focused = true" (blur)="onBlur($event)" class="rounded-lg pr-6" formControlName="email">
+            <div class="absolute right-8 top-2"><ion-icon name="at-outline"></ion-icon></div>
+          </div>
+          <div class="flex flex-col justify-start px-5 relative mt-5">
+            <label for="" class="absolute top-2 left-7" [ngClass]="focused ? '-top-2.5 left-10 z-10 bg-white px-2 text-sm':''">Mot de passe</label>
+            <input [type]="showPwd ? 'text':'password'" name="" id="" (focus)="focused = true" (blur)="onBlur($event)" class="rounded-lg pr-6" formControlName="pwd">
+            <button class="absolute right-8 top-2" (click)="showPwd = ! showPwd"><ion-icon [name]="showPwd ? 'eye-outline':'eye-off-outline'"></ion-icon></button>
+          </div>
+          <div class="flex justify-end">
+            <button class="relative text-sm mt-2 pr-5 text-green-600">Mot de passe oublié?</button>
+          </div>
+        </div>
+        <div class="relative flex justify-center mt-10">
+          <button type="submit" class="bg-green-600 rounded-xl w-40 h-11 uppercase text-white">se connecter</button>
+        </div>
+        <div class="text-center mt-2">Vous n'avez pas de compte? <button class="text-green-600">S'inscrire</button></div>
+      </form>
+    </div>
+  </div>
+</ion-content>

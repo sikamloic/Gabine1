@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-slides pager class="bg-blue-400 h-screen">
+    <ion-slide class="flex flex-col space-y-10">
+      <div class="text-white text-3xl uppercase font-bold">welcome</div>
+      <button class="bg-green-600 rounded-lg w-32 h-11 uppercase text-white font-medium" (click)="next()">suivant</button>
+    </ion-slide>
+    <ion-slide class="flex flex-col space-y-10">
+      <button class="bg-green-600 rounded-lg w-56 h-11 uppercase text-white font-medium" routerLink="/inscription">s'inscrire</button>
+      <button class="bg-green-600 rounded-lg w-56 h-11 uppercase text-white font-medium" routerLink="/connexion">se connecter</button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

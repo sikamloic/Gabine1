@@ -1,0 +1,51 @@
+<ion-header class="bg-green-600 h-12">
+  <div class="flex justify-between items-center px-2">
+    <button class="">
+      <ion-icon size="large" class="text-white" name="menu-outline"></ion-icon>
+    </button>
+    <button class="">
+      <ion-avatar item-left>
+        <img src="assets/4.jpg">
+      </ion-avatar>
+    </button>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="">
+    <div class="relative flex items-center mt-5 justify-center">
+      <label for="" class="uppercase absolute left-20" [ngClass]="focused ? 'left-20 -top-2 bg-white px-3 text-xs':''">recherche</label>
+      <input type="search" (focus)="focused = true" (blur)="onBlur($event)" name="" id="" class="mr-2 rounded-lg focus:border-green-600">
+      <button><ion-icon size="large" class="text-green-600" name="search-outline"></ion-icon></button>
+    </div>
+    <div class="text-center my-5">
+      <div class="text-xl">Pour une bonne alimentation saine et équilibrée,</div>
+      <div class="text-gray-600">retrouvez dés à présent chez nous vos produit agro-alimentaires à prix peu couteux</div>
+    </div>
+    <div class="">
+      <ion-slides pager="false">
+        <ion-slide class="w-full" *ngFor="let item of slides">
+          <img [src]="item.img" alt="" class="">
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="flex flex-row space-x-2 overflow-scroll w-screen px-2 mt-5">
+      <button class="bg-gray-400 text-lg rounded-lg px-2 lowercase" *ngFor="let item of categories">{{item.nom}}</button>
+    </div>
+    <div class="grid grid-cols-2">
+      <ion-card class="rounded-lg p-2" *ngFor="let item of articles" (click)="sendInfo(item)">
+        <div class="flex justify-end">
+          <button ion-button (click)="item.like = !item.like"><ion-icon size="large" class="text-black" [name]="item.like ? 'heart-sharp':'heart-outline'"></ion-icon></button>
+        </div>
+        <div class="">
+          <img [src]="item.img" alt="">
+        </div>
+        <div class="font-mono">
+          <div class="">{{item.nom}}</div>
+          <div class="">{{item.prix}} fcfa</div>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

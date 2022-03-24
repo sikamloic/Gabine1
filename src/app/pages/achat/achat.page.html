@@ -1,0 +1,46 @@
+<ion-header>
+  <div class="bg-green-600 h-12">
+    <div class="px-2 flex justify-between items-center pt-2">
+      <div class="text-white text-xl">Mon panier</div>
+      <div class="space-x-5">
+        <ion-icon class="text-white" name="notifications-outline"></ion-icon>
+        <ion-icon class="text-white" name="search-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="space-y-5 mt-5">
+    <div class="flex space-x-3 w-full px-3" *ngFor="let item of articles">
+      <div class="w-1/2 shadow-lg shadow-black">
+        <img [src]="item.img" alt="" class="">
+      </div>
+      <div class="w-1/2 flex flex-col justify-between">
+        <div class="flex items-start justify-between w-full">
+          <div class="">
+            <div class="">{{item.nom}}</div>
+            <div class="">{{item.prix}} fcfa</div>
+          </div>
+          <div class=""><ion-icon name="heart-outline"></ion-icon></div>
+        </div>
+        <div class="flex justify-between">
+          <div class="flex space-x-3 items-center">
+            <div class="">Qté</div>
+            <div class="flex items-center space-x-2">
+              <div class="" (click)="remove()"><ion-icon name="remove-circle-outline"></ion-icon></div>
+              <input type="number" name="" id="" [(ngModel)]="qte" class="text-center w-10 border-0">
+              <div class="" (click)="add()"><ion-icon name="add-circle-outline"></ion-icon></div>
+            </div>
+          </div>
+          <div class=""><ion-icon name="trash-outline"></ion-icon></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="flex justify-center mt-7">
+    <button class="bg-green-600 h-12 w-72 rounded-lg uppercase">payer votre achat</button>
+  </div>
+</ion-footer>
